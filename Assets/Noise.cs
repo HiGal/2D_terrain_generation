@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Noise : MonoBehaviour
 {
-    public static float[,] GenerateNoiseMap(int width, int height, float scale, int octaves, float lacunarity, float persistance, Vector2 offset)
+    public static float[,] GenerateNoiseMap(int width, int height, float scale,int seed, int octaves, float lacunarity, float persistance, Vector2 offset)
     {
         float[,] noiseMap = new float[width, height];
-        System.Random rnd = new System.Random(1337); 
+        System.Random rnd = new System.Random(seed); 
         
         Vector2[] octOffsets = new Vector2[octaves];
 

@@ -7,6 +7,7 @@ public class MapGenerator : MonoBehaviour
     public int width;
     public int height;
     public float scale;
+    public int seed;
 
     public bool autoUpdate;
 
@@ -21,7 +22,7 @@ public class MapGenerator : MonoBehaviour
 
     public void generate_map()
     {
-        float[,] noiseMap = Noise.GenerateNoiseMap(width, height, scale, octaves, lacunarity, persistance, offset);
+        float[,] noiseMap = Noise.GenerateNoiseMap(width, height, scale, seed, octaves, lacunarity, persistance, offset);
 
         Color[] colorMap = new Color[width*height];
         for (int y = 0; y < height; y++)
